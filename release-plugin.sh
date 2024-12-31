@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-PROJECT_ENV_FILE="$HOME/dev/talk2duck.env"
+PROJECT_ENV_FILE="$HOME/dev/buildnote/buildnote.env"
 
 source "$PROJECT_ENV_FILE"
 
