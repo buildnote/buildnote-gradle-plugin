@@ -1,7 +1,6 @@
 package io.buildnote.gradle.plugin.port
 
 import io.buildnote.gradle.plugin.port.DataEventType.`build-stage`
-import org.http4k.core.Uri
 import se.ansman.kotshi.JsonSerializable
 import se.ansman.kotshi.PolymorphicLabel
 import java.util.*

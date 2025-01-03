@@ -1,7 +1,6 @@
 package io.buildnote.gradle.plugin.port
 
 import io.buildnote.gradle.plugin.BuildStageFixtures
-import org.http4k.core.ContentType
 import org.http4k.core.ContentType.Companion.APPLICATION_JSON
 import org.http4k.testing.ApprovalTest
 import org.http4k.testing.Approver
