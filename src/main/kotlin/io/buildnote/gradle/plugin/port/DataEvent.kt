@@ -1,9 +1,8 @@
 package io.buildnote.gradle.plugin.port
-import org.http4k.format.Moshi.asJsonObject
-import org.http4k.format.Moshi.compact
+import io.buildnote.gradle.plugin.util.EventsJson
 import se.ansman.kotshi.JsonSerializable
 import se.ansman.kotshi.Polymorphic
-import java.util.UUID
+import java.util.*
 
 @JsonSerializable
 @Polymorphic(labelKey = "type")
@@ -13,4 +12,4 @@ sealed class DataEvent(val type: DataEventType) {
 }
 
 fun DataEvent.asCompactJsonString() =
-    compact(asJsonObject(this))
+    EventsJson.compact(EventsJson.asJsonObject(this))

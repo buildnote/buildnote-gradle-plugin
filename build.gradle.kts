@@ -12,6 +12,8 @@ repositories {
 
 plugins {
     `kotlin-dsl`
+    `java-test-fixtures`
+    `jvm-test-suite`
     `java-gradle-plugin`
     `maven-publish`
     id("com.gradle.plugin-publish") version "1.3.0"
@@ -158,4 +160,17 @@ dependencies {
 
     api("se.ansman.kotshi:api:3.0.0")
     api("org.http4k:http4k-format-moshi")
+
+
+    testImplementation(platform("org.junit:junit-bom:5.11.3"))
+    testImplementation(platform("org.http4k:http4k-bom:5.42.0.0"))
+    testImplementation(platform("org.http4k:http4k-connect-bom:5.42.0.0"))
+    testImplementation(platform("dev.forkhandles:forkhandles-bom:2.20.0.0"))
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine")
+    testImplementation("org.junit.jupiter:junit-jupiter-params")
+    testImplementation("org.http4k:http4k-testing-approval")
+    testImplementation("org.http4k:http4k-testing-strikt")
+    testImplementation("dev.forkhandles:result4k-strikt")
 }

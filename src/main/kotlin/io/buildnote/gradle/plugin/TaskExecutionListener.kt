@@ -32,11 +32,8 @@ fun taskExecutionListener(file: Path) = object : TaskExecutionListener {
                 status = DataEventStatus.successful,
                 startedAt = startTime,
                 completedAt = completedAt,
-                url = null,
                 duration = durationMs,
                 category = BuildStageCategory.command,
-                relatedTo = null,
-                message = null
             ).asCompactJsonString() + "\n"
         )
     }

@@ -14,16 +14,13 @@ data class BuildStage(
     val name: String,
     val status: DataEventStatus,
     val startedAt: Long,
-    val completedAt: Long? = null,
-    val url: Uri? = null,
-    val duration: Long = 0,
-    val category: BuildStageCategory = BuildStageCategory.phase,
-    val relatedTo: String? = null,
-    val message: String? = null,
+    val completedAt: Long,
+    val duration: Long,
+    val category: BuildStageCategory,
 ) : DataEvent(`build-stage`)
 
 @JsonSerializable
 enum class BuildStageCategory {
-    build, phase, step, command
+    command
 }
 
