@@ -1,4 +1,4 @@
-@file:Suppress("UnstableApiUsage", "DEPRECATION", "OVERRIDE_DEPRECATION")
+@file:Suppress("UnstableApiUsage", "unused")
 
 package io.buildnote.gradle.plugin
 

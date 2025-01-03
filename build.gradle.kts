@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 import org.gradle.api.JavaVersion.VERSION_21
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
 import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
@@ -17,7 +19,7 @@ plugins {
 }
 
 group = "io.buildnote"
-version = "0.0.1"
+version = "0.0.2"
 
 gradlePlugin {
     website.set("https://buildnote.io")
@@ -146,14 +148,14 @@ dependencies {
     ksp("se.ansman.kotshi:compiler:3.0.0")
     ksp("org.http4k:http4k-connect-ksp-generator:5.35.4.0")
 
-    implementation(platform("org.http4k:http4k-bom:5.35.5.0"))
-    implementation(platform("org.http4k:http4k-connect-bom:5.35.5.0"))
-    implementation(platform("dev.forkhandles:forkhandles-bom:2.20.0.0"))
-    implementation("dev.forkhandles:values4k")
-    implementation("dev.forkhandles:result4k")
-    implementation("org.http4k:http4k-core")
-    implementation("org.http4k:http4k-config")
+    api(platform("org.http4k:http4k-bom:5.35.5.0"))
+    api(platform("org.http4k:http4k-connect-bom:5.35.5.0"))
+    api(platform("dev.forkhandles:forkhandles-bom:2.20.0.0"))
+    api("dev.forkhandles:values4k")
+    api("dev.forkhandles:result4k")
+    api("org.http4k:http4k-core")
+    api("org.http4k:http4k-config")
 
-    implementation("se.ansman.kotshi:api:3.0.0")
-    implementation("org.http4k:http4k-format-moshi")
+    api("se.ansman.kotshi:api:3.0.0")
+    api("org.http4k:http4k-format-moshi")
 }
