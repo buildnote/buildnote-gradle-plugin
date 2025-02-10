@@ -148,7 +148,7 @@ tasks {
 
 dependencies {
     ksp("se.ansman.kotshi:compiler:3.0.0")
-    ksp("org.http4k:http4k-connect-ksp-generator:5.35.4.0")
+    ksp("org.http4k:http4k-connect-ksp-generator:5.47.0.0")
 
     api(platform("org.http4k:http4k-bom:5.35.5.0"))
     api(platform("org.http4k:http4k-connect-bom:5.35.5.0"))
