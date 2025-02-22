@@ -11,7 +11,6 @@ object BuildStageFixtures {
         timestamp = 0,
         startedAt = 0,
         completedAt = 10,
-        duration = 10,
         name = "stage-1",
         status = DataEventStatus.successful,
         category = BuildStageCategory.command

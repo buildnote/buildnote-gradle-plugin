@@ -1,22 +1,35 @@
 package io.buildnote.gradle.plugin.port
 
 import io.buildnote.gradle.plugin.port.DataEventType.`build-stage`
+import org.http4k.core.Uri
 import se.ansman.kotshi.JsonSerializable
-import se.ansman.kotshi.PolymorphicLabel
 import java.util.*
 
-@JsonSerializable
-@PolymorphicLabel("build-stage")
-data class BuildStage(
-    override val id: UUID,
-    override val timestamp: Long,
-    val name: String,
-    val status: DataEventStatus,
-    val startedAt: Long,
-    val completedAt: Long,
-    val duration: Long,
-    val category: BuildStageCategory,
-) : DataEvent(`build-stage`)
+fun BuildStage(
+    id: UUID,
+    timestamp: Long,
+    status: DataEventStatus,
+    name: String,
+    category: BuildStageCategory,
+    startedAt: Long,
+    completedAt: Long,
+    message: String? = null,
+    url: Uri? = null
+) = DataEvent(
+    type = `build-stage`,
+    id = id,
+    timestamp = timestamp,
+    status = status,
+    attributes = listOfNotNull(
+        "event.duration" to (completedAt.let { it - startedAt }).toString(),
+        "buildStage.startedAt" to startedAt.toString(),
+        "buildStage.completedAt" to completedAt.toString(),
+        "buildStage.name" to name,
+        "buildStage.category" to category.name,
+        message?.let { "buildStage.message" to it },
+        url?.let { "buildStage.url" to it.toString() },
+    ).toMap()
+)
 
 @JsonSerializable
 enum class BuildStageCategory {

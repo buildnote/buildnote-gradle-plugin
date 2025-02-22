@@ -1,1 +1,1 @@
-{"type":"build-stage","id":"00000000-0000-0000-0000-000000000000","timestamp":0,"name":"stage-1","status":"successful","startedAt":0,"completedAt":10,"duration":10,"category":"command"}
+{"type":"build-stage","id":"00000000-0000-0000-0000-000000000000","timestamp":0,"status":"successful","attributes":{"event.duration":"10","buildStage.startedAt":"0","buildStage.completedAt":"10","buildStage.name":"stage-1","buildStage.category":"command"}}

@@ -22,7 +22,6 @@ fun taskExecutionListener(file: Path) = object : TaskExecutionListener {
 
     override fun afterExecute(task: Task, state: TaskState) {
         val completedAt = System.currentTimeMillis()
-        val durationMs = completedAt - startTime
 
         file.appendText(
             BuildStage(
@@ -32,7 +31,6 @@ fun taskExecutionListener(file: Path) = object : TaskExecutionListener {
                 status = DataEventStatus.successful,
                 startedAt = startTime,
                 completedAt = completedAt,
-                duration = durationMs,
                 category = BuildStageCategory.command,
             ).asCompactJsonString() + "\n"
         )
