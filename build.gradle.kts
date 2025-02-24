@@ -16,7 +16,7 @@ plugins {
     `jvm-test-suite`
     `java-gradle-plugin`
     `maven-publish`
-    id("com.gradle.plugin-publish") version "1.3.0"
+    id("com.gradle.plugin-publish") version "1.3.1"
     id("com.google.devtools.ksp") version "2.0.21-1.0.28"
 }
 
