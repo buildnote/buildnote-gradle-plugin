@@ -150,7 +150,7 @@ dependencies {
     ksp("se.ansman.kotshi:compiler:3.0.0")
     ksp("org.http4k:http4k-connect-ksp-generator:6.0.0.0")
 
-    api(platform("org.http4k:http4k-bom:6.0.0.0"))
+    api(platform("org.http4k:http4k-bom:6.5.0.0"))
     api(platform("dev.forkhandles:forkhandles-bom:2.20.0.0"))
     api("dev.forkhandles:values4k")
     api("dev.forkhandles:result4k")
@@ -162,7 +162,7 @@ dependencies {
 
 
     testImplementation(platform("org.junit:junit-bom:5.11.3"))
-    testImplementation(platform("org.http4k:http4k-bom:6.0.0.0"))
+    testImplementation(platform("org.http4k:http4k-bom:6.5.0.0"))
     testImplementation(platform("dev.forkhandles:forkhandles-bom:2.20.0.0"))
 
     testImplementation("org.junit.jupiter:junit-jupiter-api")
