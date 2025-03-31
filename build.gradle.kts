@@ -17,7 +17,7 @@ plugins {
     `java-gradle-plugin`
     `maven-publish`
     id("com.gradle.plugin-publish") version "1.3.0"
-    id("com.google.devtools.ksp") version "2.0.21-1.0.28"
+    id("com.google.devtools.ksp") version "2.1.20-1.0.32"
 }
 
 group = "io.buildnote"
