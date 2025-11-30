@@ -11,7 +11,7 @@ build.gradle.kts example:
 
 ```gradle
 plugins {    
-    id("io.buildnote.buildnote-gradle-plugin") version "0.0.5"
+    id("io.buildnote.buildnote-gradle-plugin") version "1.0.0"
 }
 ```
 
