@@ -4,6 +4,7 @@ import io.buildnote.gradle.plugin.port.DataEventType.`build-stage`
 import org.http4k.core.Uri
 import se.ansman.kotshi.JsonSerializable
 import java.util.*
+import kotlin.to
 
 fun BuildStage(
     id: UUID,
@@ -20,15 +21,19 @@ fun BuildStage(
     id = id,
     timestamp = timestamp,
     status = status,
-    attributes = listOfNotNull(
-        "event.duration" to (completedAt.let { it - startedAt }).toString(),
-        "buildStage.startedAt" to startedAt.toString(),
-        "buildStage.completedAt" to completedAt.toString(),
-        "buildStage.name" to name,
-        "buildStage.category" to category.name,
-        message?.let { "buildStage.message" to it },
-        url?.let { "buildStage.url" to it.toString() },
-    ).toMap()
+    content = mapOf(
+        "event" to mapOf(
+            "duration" to completedAt.let { it - startedAt }
+        ),
+        "buildStage" to listOfNotNull(
+            "startedAt" to startedAt,
+            "completedAt" to completedAt,
+            "name" to name,
+            "category" to category.name,
+            message?.let { "message" to it },
+            url?.let { "url" to it.toString() },
+        ).toMap()
+    )
 )
 
 @JsonSerializable

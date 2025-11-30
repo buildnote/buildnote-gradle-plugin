@@ -10,7 +10,7 @@ data class DataEvent(
     val id: UUID,
     val timestamp: Long,
     val status: DataEventStatus = DataEventStatus.successful,
-    val attributes: Map<String, String> = emptyMap(),
+    val content: Map<String, Any> = emptyMap(),
 )
 
 fun DataEvent.asCompactJsonString() =
